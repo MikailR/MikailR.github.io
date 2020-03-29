@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #000;
+}
+
+.jumbotron {
+    /* TODO: Certify vh + vw units for mobile browsers */
+    /* Note: width calculated from https://stackoverflow.com/questions/33606565/is-it-possible-to-calculate-the-viewport-width-vw-without-scrollbar */
+    height: 100vh;
+    width: calc(100vw - (100vw - 100%));
+    background-color: #fff;
+}
+
+section {
+    height: 100vh;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 60px;
+    font-weight: 500;
+}
+.section-1 { background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%); }
+.section-2 { background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%); }
+.section-3 { background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); }
