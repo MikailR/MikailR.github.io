@@ -92,7 +92,7 @@ nav a {
     transform: translateX(0);
 }
 [id="burger-input"]:checked + .burger-label .bar-1, [id="burger-input"]:checked + .burger-label .bar-3 {
-    /* Calculated using the Pythagorean Theorem on a 100x2 right-angled triangle */
+    /* Pythagorean Theorem on a 100x100xwidth right-angled triangle */
     width: 141.42%;
 }
 [id="burger-input"]:checked ~ .burger-label .bar-1 {

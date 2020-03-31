@@ -12,14 +12,22 @@ body {
 
 .jumbotron {
     /* TODO: Certify vh + vw units for mobile browsers */
-    /* Note: width calculated from https://stackoverflow.com/questions/33606565/is-it-possible-to-calculate-the-viewport-width-vw-without-scrollbar */
     height: 100vh;
-    width: calc(100vw - (100vw - 100%));
+    width: 100%;
+
+    justify-content: flex-start;
+
     background-color: #fff;
 }
 
+.jumbotron-logo {
+    width: 95%;
+}
+
+
+
 section {
-    height: 100vh;
+    height: 100%;
 
     font-family: 'Montserrat', sans-serif;
     font-size: 60px;
