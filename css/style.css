@@ -16,9 +16,6 @@ body {
     width: 100%;
     padding: 10px;
 
-    /* TODO: Remove jc flex property */
-    justify-content: flex-start;
-
     background-color: #fff;
 }
 
