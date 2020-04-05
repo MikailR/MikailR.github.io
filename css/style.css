@@ -70,7 +70,7 @@ body {
 .arrow {
     height: 100%;
     width: 100%;
-    /* opacity: 0; */
+    opacity: 0;
     background-image: url('/assets/jumbotron/down-arrow.png');
     background-position: center;
     background-size: contain;
