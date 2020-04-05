@@ -11,23 +11,100 @@ body {
 }
 
 .jumbotron {
-    /* TODO: Certify vh + vw units for mobile browsers */
-    height: 100vh;
+    /* TODO: Test with height: 100% */
+    height: calc(var(--vh) * 100);
     width: 100%;
+    padding: 10px;
 
+    /* TODO: Remove jc flex property */
     justify-content: flex-start;
 
     background-color: #fff;
 }
 
 .jumbotron-logo {
-    width: 95%;
+    width: 100%;
 }
 
+.jumbotron-delimiter {
+    height: 5px;
+    width: 100%;
+    background-color: #989665;
+}
 
+.jumbotron-main-text {
+    margin: 20px;
+}
+
+.jumbotron-contact-buttons {
+    flex-grow: 1;
+
+    /* background-color: orange; */
+}
+
+.phone-container, .email-container {margin: 10px;}
+.phone-number, .email-address {
+    height: 75px;
+    width: 75vw;
+    border-radius: 10px;
+    padding: 10px;
+    
+    background-color: #989665;
+    box-shadow: 0 1px 10px #989665;
+}
+
+.phone-icon, .email-icon {
+    height: 100%;
+}
+
+.arrow-container {
+    position: relative;
+    height: 50px;
+    width: 50px;
+
+    margin: 10px;
+
+    /* background-color: blue; */
+}
+
+.arrow {
+    height: 100%;
+    width: 100%;
+    /* opacity: 0; */
+    background-image: url('/assets/jumbotron/down-arrow.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.arrow-first {
+    animation: arrow-movement 2s ease-in-out infinite;
+}
+
+.arrow-second {
+    animation: arrow-movement 2s 1s ease-in-out infinite;
+}
+
+@keyframes arrow-movement {
+    0% { 
+        opacity: 0;
+        top: 25%;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% { 
+        opacity: 0;
+    }
+}
 
 section {
-    height: 100%;
+    height: 100vh;
 
     font-family: 'Montserrat', sans-serif;
     font-size: 60px;
