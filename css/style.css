@@ -100,6 +100,18 @@ body {
     }
 }
 
+.parallax-background-one {
+    background-image: url('../assets/parallax/Porsche\ 1\ \(quoted\).png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.parallax-background-one img {
+    /* Dirty hack to set background image height :) */
+    width: 100%;
+    visibility: hidden;
+}
+
 section {
     height: 100vh;
 
