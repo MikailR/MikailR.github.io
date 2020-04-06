@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #000;
+    background-color: #fff;
 }
 
 .jumbotron {
@@ -101,7 +101,7 @@ body {
 }
 
 .parallax-background-one {
-    background-image: url('../assets/parallax/Porsche\ 1\ \(quoted\).png');
+    background-image: url('../assets/parallax/Porsche\ 1\ \(quoted\ -\ 3).png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -119,6 +119,43 @@ section {
     font-size: 60px;
     font-weight: 500;
 }
-.section-1 { background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%); }
+
+.section-1 {
+    height: auto;
+    min-height: 100vh;
+    justify-content: space-evenly;
+}
+
+.your-benefits-umbrella {
+    width: 100%;
+    margin: 20px;
+}
+
+.umbrella-card {
+    width: 80%;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 1px 10px #000;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+.umbrella-card-top-border {
+    height: 5px;
+    width: 100%;
+    background-color: #0083c1;
+}
+.umbrella-card-title {
+    margin: 10px;
+    margin-top: 30px;
+    font-size: 32px;
+}
+.umbrella-card-text {
+    margin: 30px;
+    font-size: 20px;
+    line-height: calc(20px * 1.6);
+}
+
+
+
 .section-2 { background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%); }
 .section-3 { background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); }
