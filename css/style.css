@@ -100,17 +100,24 @@ body {
     }
 }
 
-.parallax-background-one {
-    background-image: url('../assets/parallax/Porsche\ 1\ \(quoted\ -\ 3).png');
+.parallax-background {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
 }
-.parallax-background-one img {
+.parallax-background img {
     /* Dirty hack to set background image height :) */
     width: 100%;
     visibility: hidden;
 }
+
+.parallax-background-one {
+    background-image: url('../assets/parallax/Porsche 1.png');
+}
+.parallax-background-two {
+    background-image: url('../assets/parallax/Porsche 2.png');
+}
+
 
 section {
     height: 100vh;
@@ -121,13 +128,14 @@ section {
 }
 
 .section-1 {
+    /* TODO: Remove if height is removed from section */
     height: auto;
     min-height: 100vh;
     justify-content: space-evenly;
 }
 
 .your-benefits-umbrella {
-    width: 100%;
+    width: 90%;
     margin: 20px;
 }
 
@@ -157,5 +165,7 @@ section {
 
 
 
-.section-2 { background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%); }
+/* .section-2 { background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%); } */
+.section-2 { background-color: white; }
+
 .section-3 { background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); }
