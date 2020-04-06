@@ -104,10 +104,7 @@ body {
     background-image: url('../assets/parallax/Porsche 1.png');
 }
 .pb-2 {
-    background-image: url('../assets/parallax/Porsche 2 (v3).png');
-}
-.pb-3 {
-
+    background-image: url('../assets/parallax/Porsche 2.png');
 }
 
 .parallax-background {
@@ -120,6 +117,12 @@ body {
     /* Dirty hack to set background image height :) */
     width: 100%;
     visibility: hidden;
+}
+
+.pb-3 {
+    background-image: url('../assets/parallax/Corporate.png');
+    background-size: cover;
+    height: 30%;
 }
 
 
