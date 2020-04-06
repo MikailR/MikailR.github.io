@@ -100,22 +100,26 @@ body {
     }
 }
 
+.pb-1 {
+    background-image: url('../assets/parallax/Porsche 1.png');
+}
+.pb-2 {
+    background-image: url('../assets/parallax/Porsche 2 (v3).png');
+}
+.pb-3 {
+
+}
+
 .parallax-background {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    background-color: #000; /* To hide incomplete edges */
 }
 .parallax-background img {
     /* Dirty hack to set background image height :) */
     width: 100%;
     visibility: hidden;
-}
-
-.pb-one {
-    background-image: url('../assets/parallax/Porsche 1.png');
-}
-.pb-two {
-    background-image: url('../assets/parallax/Porsche 2 (v3).png');
 }
 
 
