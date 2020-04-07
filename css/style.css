@@ -31,6 +31,7 @@ body {
 
 .jumbotron-main-text {
     margin: 20px;
+    text-align: center;
 }
 
 .jumbotron-contact-buttons {
@@ -125,7 +126,6 @@ body {
     height: 30%;
 }
 
-
 section {
     height: 100vh;
 
@@ -141,7 +141,7 @@ section {
     justify-content: space-evenly;
 }
 
-.your-benefits-umbrella {
+img.umbrella {
     width: 90%;
     margin: 20px;
 }
@@ -168,6 +168,19 @@ section {
     margin: 30px;
     font-size: 20px;
     line-height: calc(20px * 1.6);
+}
+
+.section-2 {
+    /* TODO: Remove if height is removed from section */
+    height: auto;
+    min-height: 100vh;
+    justify-content: space-evenly;
+}
+
+img.handshake {
+    width: 90%;
+    margin: 20px;
+    margin-bottom: auto;
 }
 
 

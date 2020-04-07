@@ -59,6 +59,16 @@ nav {
     transition: transform 0.5s;
 }
 
+/* nav::after {
+    position: absolute;
+    height: 100%;
+    width: 90%;
+
+    content: '';
+    z-index: -2;
+    background-color: #989665;
+} */
+
 nav::before {
     position: absolute;
     height: 100%;
@@ -69,7 +79,7 @@ nav::before {
     background-color: #989665;
     
     transform-origin: bottom;
-    transform: skewX(15deg) translateX(0);
+    transform: skewX(15deg);
 }
 
 nav a {
