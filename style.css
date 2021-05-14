@@ -76,6 +76,7 @@ code {
 
 .nav .nav-links.desktop {
   height: 100%;
+  color: #318875;
 
   display: flex;
   flex-direction: row;
@@ -108,7 +109,7 @@ code {
 
 .nav-link > a {
   text-decoration: none;
-  color: #367e85;
+  color: inherit;
 }
 
 .nav-link > a:hover {
@@ -214,10 +215,6 @@ canvas {
   background-color: purple;
 }
 
-.white {
-  color: #fff !important;
-}
-
 /* Media Queries */
 
 @media only screen and (min-width: 768px) {
@@ -268,5 +265,9 @@ canvas {
 
   .nav-link {
     margin: 20px;
+  }
+
+  .nav-link > a {
+    color: white;
   }
 }
