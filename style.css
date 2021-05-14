@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  color: #333333;
+}
+
+.nav-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 999;
+
+  width: 100%;
+
+  transition: box-shadow 0.3s ease;
+}
+
+.scrolled {
+  box-shadow: 0 3px 10px #5f5f5f;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 0 10px;
+  width: 100%;
+
+  /* background-color: rgba(0, 9, 80, 0.5); */
+  background-color: #fff;
+  height: 80px;
+
+  transition: box-shadow 0.3s ease;
+}
+
+.nav .logo {
+  overflow: hidden;
+  height: 80%;
+  margin-right: auto;
+}
+
+.nav .logo img {
+  height: 80%;
+  /* Hardcoded fix lol */
+  margin-top: 5px;
+}
+
+.nav .nav-links {
+  list-style-type: none;
+  font-size: 1.5em;
+  font-weight: 600;
+
+  /* background-color: orange; */
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  margin: 20px;
+}
+
+.nav-link > a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-link > a:hover {
+  color: #c92221;
+}
+
+.img-link {
+  height: 50%;
+}
+
+.img-link img {
+  height: 100%;
+}
+
+.img-link img:hover {
+  filter: brightness(1.2);
+}
+
+.hamburger-icon-wrapper {
+  margin: 0 10px;
+  display: none;
+}
+
+.hamburger-icon {
+  font-size: 22pt;
+  font-weight: 500;
+}
+
+.hamburger-icon:hover {
+  cursor: pointer;
+}
+
+.jumbotron {
+  overflow: auto;
+  /* min-height: 100vh;
+  min-height: -webkit-fill-available; */
+
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+
+  /* background-color: orange; */
+}
+
+.jumbotron .text {
+  position: absolute;
+  top: 200px;
+  /* left: 50%;
+  transform: translateX(-50%); */
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
+}
+
+.jumbotron .sub-text {
+  position: absolute;
+  top: calc(200px + 2.5em);
+  /* left: 50%;
+  transform: translateX(-50%); */
+  font-size: 1.3em;
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: auto;
+  /* background-color: green; */
+}
+
+.animation-container {
+  /* background-color: green; */
+}
+
+canvas {
+  display: block;
+  margin: auto;
+  max-width: calc(100% - 40px);
+  max-width: 100%;
+}
+
+.footer {
+  height: 100vh;
+  background-color: purple;
+}
+
+/* Media Queries */
+
+@media only screen and (min-width: 992px) {
+  canvas {
+    margin: auto;
+    max-width: 100%;
+  }
+
+  .nav {
+    padding: 0 50px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  #nav-links {
+    display: none;
+  }
+
+  .hamburger-icon-wrapper {
+    display: block;
+  }
+}

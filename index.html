@@ -1,96 +1,66 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Bauer Benefits</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/flex-classes.css">
-    <link rel="stylesheet" href="./css/nav-style.css">
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <input class="burger-input" type="checkbox" id="burger-input" role="button" title="menu">
-    <label class="burger-label" for="burger-input" aria-hidden="true" title="menu">
-        <span class="bar-1"></span>
-        <span class="bar-2"></span>
-        <span class="bar-3"></span>
-    </label>
-    <nav>
-        <a href="./index.html">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Newsletter</a>
-        <a href="#">Contact</a>
-        <img class="nav-logo" src="./assets/navigation/logo.png" alt="Bauer Benefits Logo">
-    </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://use.fontawesome.com/328f4438ee.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"
+      integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/crash-animation.js" defer></script>
+    <script src="js/ui-setup.js" defer></script>
+    <script src="js/scroll-animation.js" defer></script>
+    <script src="js/event-handlers.js" defer></script>
+    <style>
+      /* For testing */
+    </style>
 
-    <!-- Main Content -->
-    <div class="jumbotron flex-col-center">
-        <img class="jumbotron-logo" src="./assets/jumbotron/logo.png" alt="Bauer Benefits Logo">
-        <div class="jumbotron-delimiter"></div>
-        <!-- <h2 class="jumbotron-main-text">A Trusted Partner<br><span style="color: #0083c1;">since 1986</span></h2> -->
-        <div class="jumbotron-contact-buttons flex-col-center">
-            <h2 class="jumbotron-main-text">A Trusted Partner<br><span style="color: #0083c1;">since 1986</span></h2>
-            <div class="phone-container flex-row-center">
-                <a class="phone-number flex-row-center" href="tel:519-240-1290">
-                    <img class="phone-icon" alt="phone icon" src="./assets/jumbotron/contact/phone.svg">
-                </a>
-            </div>
-            <div class="email-container flex-row-center">
-                <a class="email-address flex-row-center" href="mailto:ross@bauerbenefits.com">
-                    <img class="email-icon" src="./assets/jumbotron/contact/envelope.svg" alt="email icon">
-                </a>
-            </div>
+    <title>Scroll Experiment</title>
+  </head>
+  <body id="body">
+    <div id="nav-wrap" class="nav-wrap">
+      <nav id="nav" class="nav">
+        <!-- Consider changing to img -->
+        <!-- <div class="logo-wrapper"> -->
+          <div class="logo">
+            <a href="#">
+              <img src="logo 2.png" alt="CAUIP Logo" />
+            </a>
+          </div>
+        <!-- </div> -->
+        <ul id="nav-links" class="nav-links">
+          <li class="nav-link">
+            <a href="#">Home</a>
+          </li>
+          <li class="nav-link">
+            <a href="#">Contact</a>
+          </li>
+          <li class="nav-link img-link">
+            <a href="#">
+              <img src="instagram.png" alt="Instagram Logo" />
+            </a>
+          </li>
+        </ul>
+        <div onclick="toggleMenu()" id="hamburger-icon" class="hamburger-icon-wrapper">
+          <i class="fa fa-bars hamburger-icon" aria-hidden="true"></i>
         </div>
-
-        <!-- TODO: Consider overlaying arrows with blue: #0083c1-->
-        <div class="arrow-container">
-            <div class="arrow arrow-first"></div>
-            <div class="arrow arrow-second"></div>
-        </div>
+      </nav>
     </div>
-
-    <div class="parallax-background pb-1">
-        <!-- Dirty hack to set background image height :) -->
-        <img src="./assets/parallax/Porsche 1.png" alt="Porsche with quote">
+    <div id="animation-container" class="animation-container">
+      <div id="jumbotron" class="jumbotron">
+          <div class="text">
+              Scroll Animation Demo
+          </div>
+          <div class="sub-text">
+              For Sylvan Naidoo
+          </div>
+      </div>
+      <canvas height="3200" width="2333" id="car-crash"></canvas>
     </div>
-
-    <section class="section-1 flex-col-center">
-        <!-- TODO: Complete image edits -->
-        <img class="umbrella" src="./assets/sections/Umbrella.png" alt="Benefits graphic">
-        <div class="card">
-            <div class="card-top-border"></div>
-            <h2 class="card-title">Benefit Plans</h2>
-            <p class="card-text">Bauer Benefits offers a full suite of optional benefits. Most plans start with the core benefits and then we build from there.</p>
-        </div>
-    </section>
-
-    <div class="parallax-background pb-2">
-        <img src="./assets/parallax/Porsche 2.png" alt="Porsche with quote">
-    </div>
-
-    <section class="section-2 flex-col-center">
-        <img class="handshake" src="./assets/sections/Handshake.png" alt="Handshake graphic">
-        <div class="card">
-            <div class="card-top-border"></div>
-            <h2 class="card-title">Place Holder</h2>
-            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id, accusamus sint. Doloribus excepturi vero quis molestiae ad, ullam.</p>
-            <div class="get-quote-container flex-row-center">
-                <a class="get-quote flex-row-center" href="#">
-                    Get a Quote
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <div class="parallax-background pb-3">
-        <img src="./assets/parallax/Corporate.png" alt="Corporate picture with skyline">
-    </div>
-
-    <section class="section-3 flex-col-center">Section 3</section>
-
-    <!-- JavaScript -->
-    <script src="./js/index.js"></script>
-</body>
+    <div class="footer"></div>
+  </body>
 </html>
