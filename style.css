@@ -215,6 +215,10 @@ canvas {
   background-color: purple;
 }
 
+.white {
+  color: white !important;
+}
+
 /* Media Queries */
 
 @media only screen and (min-width: 768px) {
