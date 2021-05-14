@@ -5,6 +5,7 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #333333;
 }
 
 code {
@@ -16,8 +17,6 @@ code {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  color: #333333;
 }
 
 .nav-wrap {
@@ -52,9 +51,13 @@ code {
 }
 
 .nav .logo {
+  z-index: 999;
   overflow: hidden;
   height: 80%;
   margin-right: auto;
+
+  background-color: #fff;
+  border-radius: 50%;
 }
 
 .nav .logo img {
@@ -68,8 +71,10 @@ code {
   font-size: 1.5em;
   font-weight: 600;
 
-  /* background-color: orange; */
+  transition: left 0.5s ease;
+}
 
+.nav .nav-links.desktop {
   height: 100%;
 
   display: flex;
@@ -78,13 +83,32 @@ code {
   align-items: center;
 }
 
+.nav .nav-links.mobile {
+  background-color: #367e85;
+  color: #fff !important;
+
+  position: fixed;
+  top: 0;
+  left: 110%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav .nav-links.mobile.activated {
+  left: 0;
+}
+
 .nav-link {
-  margin: 20px;
+  margin-left: 20px;
 }
 
 .nav-link > a {
   text-decoration: none;
-  color: inherit;
+  color: #367e85;
 }
 
 .nav-link > a:hover {
@@ -104,17 +128,18 @@ code {
 }
 
 .hamburger-icon-wrapper {
-  margin: 0 10px;
+  z-index: 999;
+  margin-top: 5px;
+  margin-right: 10px;
   display: none;
+
+  transition: color 0.5s ease;
+  /* background-color: orange; */
 }
 
-.hamburger-icon {
+#hamburger-icon {
   font-size: 22pt;
   font-weight: 500;
-}
-
-.hamburger-icon:hover {
-  cursor: pointer;
 }
 
 .jumbotron {
@@ -129,36 +154,52 @@ code {
   /* background-color: orange; */
 }
 
-.jumbotron .text {
+.jumbotron .text-container {
   position: absolute;
-  top: 200px;
-  /* left: 50%;
-  transform: translateX(-50%); */
-  font-size: 2em;
-  text-align: center;
   width: 100%;
+  padding: 0 20px;
+  background-image: linear-gradient(to bottom, white, white 60%, rgba(255, 255, 255, 0));
+  top: 80px;
+
+  /* text-align: center; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
 }
 
-.jumbotron .sub-text {
-  position: absolute;
-  top: calc(200px + 2.5em);
-  /* left: 50%;
-  transform: translateX(-50%); */
-  font-size: 1.3em;
-  text-align: center;
-  width: 100%;
+.jumbotron .text-container .header {
+  margin-top: 6vh;
 }
 
-h1 {
-  font-family: sans-serif;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: auto;
-  /* background-color: green; */
+.jumbotron .text-container .sub-header {
+  margin-top: 5px;
+  font-weight: 400;
+  color: #c92221;
 }
 
-.animation-container {
-  /* background-color: green; */
+.jumbotron .text-container .divider {
+  height: 2px;
+  background-color: #333333;
+  margin-top: 20px;
+}
+
+.jumbotron .text-container .learn-more {
+  display: block;
+  text-decoration: none;
+  color: #333333;
+  padding: 8px 15px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  margin-right: auto;
+  font-size: 22px;
+  border: 3px solid #333333;
+}
+
+.jumbotron .text-container .learn-more:hover {
+  color: #fff;
+  background-color: #333;
 }
 
 canvas {
@@ -173,7 +214,36 @@ canvas {
   background-color: purple;
 }
 
+.white {
+  color: #fff !important;
+}
+
 /* Media Queries */
+
+@media only screen and (min-width: 768px) {
+  .jumbotron .text-container {
+    padding: 0 50px;
+    text-align: center;
+  }
+
+  .jumbotron .text-container .header {
+    margin-top: calc(35px + 6vh);
+    font-size: 3em;
+  }
+
+  .jumbotron .text-container .sub-header {
+    margin-top: 15px;
+    font-weight: 500;
+  }
+
+  .jumbotron .text-container .learn-more {
+    margin-left: auto;
+  }
+
+  .jumbotron .text-container .divider {
+    display: none;
+  }
+}
 
 @media only screen and (min-width: 992px) {
   canvas {
@@ -181,17 +251,22 @@ canvas {
     max-width: 100%;
   }
 
-  .nav {
+  .nav,
+  .jumbotron .text-container {
     padding: 0 50px;
   }
 }
 
 @media only screen and (max-width: 992px) {
-  #nav-links {
+  .nav .img-link {
     display: none;
   }
 
   .hamburger-icon-wrapper {
     display: block;
+  }
+
+  .nav-link {
+    margin: 20px;
   }
 }

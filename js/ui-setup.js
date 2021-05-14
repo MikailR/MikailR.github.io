@@ -23,3 +23,24 @@ window.addEventListener("resize", () => {
     // console.log("resized");
   }
 });
+
+const navLinks = document.getElementById("nav-links");
+// const hamburger = document.getElementById("hamburger-icon");
+
+if (window.matchMedia("(max-width: 992px)").matches) {
+  navLinks.classList.add("mobile");
+} else {
+  navLinks.classList.add("desktop");
+}
+
+window.addEventListener("resize", () => {
+  if (window.matchMedia("(max-width: 992px)").matches) {
+    navLinks.classList.remove("desktop");
+    navLinks.classList.add("mobile")
+  } else {
+    navLinks.classList.remove("mobile");
+    navLinks.classList.remove("activated");
+    hamburger.classList.remove("white");
+    navLinks.classList.add("desktop");
+  }
+})
