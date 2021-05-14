@@ -10,7 +10,7 @@ console.log(scene);
 const isMobileGlobal =
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     navigator.userAgent
-  ) || navigator.maxTouchPoints > 0;
+  ) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 0);
 
 if (!isMobileGlobal) {
   controller.addScene(scene);
