@@ -2,12 +2,19 @@ const setJumbotronHeight = () => {
   const visibleCanvasRatio = 1100 / 3200; // From animation dimensions
 
   // TODO: use navbar instead
-  const height = Math.max(
-    window.innerHeight - visibleCanvasRatio * canvas.clientHeight,
-    navbar.clientHeight
-  );
-
-  jumbotron.style.height = height.toString() + "px";
+//   const height = Math.max(
+//     window.innerHeight - visibleCanvasRatio * canvas.clientHeight,
+//     navbar.clientHeight
+//   );
+  
+  // TODO: Revisit to check if correct
+  const height = window.innerHeight - visibleCanvasRatio * canvas.clientHeight;
+  if (height >= 0) {
+    jumbotron.style.height = height.toString() + "px";
+    jumbotron.style.marginBottom = "0px";
+  } else {
+    jumbotron.style.marginBottom = height.toString() + "px";
+  }
 };
 
 setJumbotronHeight();
