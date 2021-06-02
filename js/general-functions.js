@@ -67,12 +67,12 @@ const getFrame = (index) =>
 // Preloads the animation's image sequence to avoid lagging
 //
 const preloadImages = () => {
-  console.log("preloading images");
+  console.log('started loading images')
   for (let i = 0; i < constants.frameCount; i++) {
     const _img = new Image();
     _img.src = getFrame(i);
   }
-  console.log("finished preloading images");
+  console.log('finished loading images')
 };
 
 // Initializes img to the first image in the sequence
