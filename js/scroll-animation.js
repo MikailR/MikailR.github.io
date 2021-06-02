@@ -1,25 +1,38 @@
-var controller = new ScrollMagic.Controller();
+// Gets frame index for animation based on current scroll position
+//  and some other constraints
+//
+const getFrameIndex = () => {
+  const animationScrollTop = zeroPositive(html.scrollTop);
+  const animationMaxScrollTop = getAnimationMaxScrollTop();
+  const animationScrollFraction = animationScrollTop / animationMaxScrollTop;
+  const animationMaxScrollFraction =
+    getMovingPartsHeight() / animationMaxScrollTop;
+  return Math.min(
+    constants.frameCount,
+    Math.ceil(animationMaxScrollFraction * constants.frameCount),
+    Math.ceil(animationScrollFraction * constants.frameCount)
+  );
+};
 
-const maxScrollTop = jumbotron.clientHeight + 2 * canvas.clientHeight;
-var scene = new ScrollMagic.Scene({
-  duration: Math.floor(0.2 * maxScrollTop),
-}).setPin("#animation-container");
+// Binds the animation to the scroll position
+//
+window.addEventListener("scroll", () => {
+  // Ensures that off-screen re-rendering does not occur
+  if (html.scrollTop > getMovingPartsHeight()) return;
 
-console.log(scene);
+  requestAnimationFrame(() => updateImage(getFrameIndex()));
 
-const isMobileGlobal =
-  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  ) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 0);
-
-if (!isMobileGlobal) {
-  controller.addScene(scene);
-}
-
-window.addEventListener("resize", () => {
-  const updatedMaxScrollTop = jumbotron.clientHeight + 2 * canvas.clientHeight;
-  scene.duration(Math.floor(0.2 * updatedMaxScrollTop));
-  // console.log(scene.duration);
+  if (html.scrollTop > getAnimationPinDuration()) {
+    navWrap.classList.add("scrolled");
+  } else {
+    navWrap.classList.remove("scrolled");
+  }
 });
 
-// TODO: Dabble with maxScrollTop and try to make code more cohesive with best practices.
+// Ensures that animation bindings are maintained on window resizing
+//
+window.addEventListener("resize", () => {
+  if (!constants.isMobile) {
+    requestAnimationFrame(() => updateImage(getFrameIndex()));
+  }
+});
