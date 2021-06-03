@@ -29,4 +29,4 @@ const constants = {
 // Global Variables (with initialization)
 ////
 let currentFrameIndex = 0;
-
+const images = new Array();

@@ -66,10 +66,10 @@ const getFrame = (index) =>
 
 // Preloads the animation's image sequence to avoid lagging
 //
-const preloadImages = () => {
-  const _img = new Image();
-  for (let i = 0; i < constants.frameCount; i++) {
-    _img.src = getFrame(i);
+const preloadImages = (imgArray) => {
+  for (let i = 0; i <= constants.frameCount; i++) {
+    imgArray[i] = new Image();
+    imgArray[i].src = getFrame(i);
   }
 };
 
@@ -86,7 +86,7 @@ const initializeImage = () => {
 //
 const updateImage = (index) => {
   if (index === currentFrameIndex || index > constants.frameCount) return;
-  img.src = getFrame(index);
-  context.drawImage(img, 0, 0);
+  // img.src = getFrame(index);
+  context.drawImage(images[index], 0, 0);
   currentFrameIndex = index;
 };
