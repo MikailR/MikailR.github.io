@@ -1,0 +1,43 @@
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* height: 100vh; */
+}
+
+p {
+  font-size: 1.5em;
+}
+
+.divider {
+  text-align: center;
+}
+
+.profile-link {
+  display: flex;
+  flex-direction: "row";
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.profile-icon {
+  height: 25px;
+  width: 25px;
+}
+
+.signature {
+  text-align: center;
+  text-decoration: underline;
+}
+
+@media only screen and (min-width: 520px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .desktop-only {
+    display: none;
+  }
+}
