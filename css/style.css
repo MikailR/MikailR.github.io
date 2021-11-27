@@ -30,6 +30,13 @@ p {
   text-decoration: underline;
 }
 
+.demo {
+  display: block;
+  margin: auto;
+  background-color: "green";
+  text-align: center;
+}
+
 @media only screen and (min-width: 520px) {
   .mobile-only {
     display: none;
