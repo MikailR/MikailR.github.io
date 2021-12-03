@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify -p esmify index.js -o bundle.js",
+    "watch": "watchify -p esmify index.js -o bundle.js"
   },
   "repository": {
     "type": "git",
@@ -13,12 +15,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "esmify": "^2.1.1",
-    "watchify": "^4.0.0"
+    "browserify": "^17.0.0",
+    "esmify": "^2.1.1"
   },
   "dependencies": {
     "canvas-sketch-util": "^1.10.0",
-    "tweakpane": "^3.0.6"
+    "tweakpane": "^3.0.6",
+    "watchify": "^4.0.0"
   },
   "bugs": {
     "url": "https://github.com/MikailR/MikailR.github.io/issues"
