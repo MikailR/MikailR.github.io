@@ -1,0 +1,27 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikailR/MikailR.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esmify": "^2.1.1",
+    "watchify": "^4.0.0"
+  },
+  "dependencies": {
+    "canvas-sketch-util": "^1.10.0",
+    "tweakpane": "^3.0.6"
+  },
+  "bugs": {
+    "url": "https://github.com/MikailR/MikailR.github.io/issues"
+  },
+  "homepage": "https://github.com/MikailR/MikailR.github.io#readme"
+}
