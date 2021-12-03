@@ -14,13 +14,19 @@
 
   function initHeader() {
     width = window.innerWidth;
-    height = window.innerHeight + (0.3 * window.innerHeight);
+    height = window.innerHeight;
     target = { x: width / 2, y: height / 2 };
 
     canvas = document.getElementById("canvas");
-    canvas.width = width;
-    canvas.height = height;
     ctx = canvas.getContext("2d");
+
+    const pxlRatio = window.devicePixelRatio;
+    canvas.width = width * pxlRatio;
+    canvas.height = height * pxlRatio;
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+
+    ctx.scale(pxlRatio, pxlRatio);
 
     // create points
     points = [];

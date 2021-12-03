@@ -28,13 +28,15 @@ p {
 .signature {
   text-align: center;
   text-decoration: underline;
+  margin-bottom: 0;
 }
 
-.demo {
-  display: block;
-  margin: auto;
-  background-color: "green";
+.demo-link {
+  display: flex;
+  font-size: 1.5em;
   text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 @media only screen and (min-width: 520px) {

@@ -22,9 +22,15 @@
     // largeHeader.style.height = height+'px';
 
     canvas = document.getElementById("canvas");
-    canvas.width = width;
-    canvas.height = height;
     ctx = canvas.getContext("2d");
+
+    const pxlRatio = window.devicePixelRatio;
+    canvas.width = width * pxlRatio;
+    canvas.height = height * pxlRatio;
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+
+    ctx.scale(pxlRatio, pxlRatio);
 
     // create points
     points = [];
