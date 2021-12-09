@@ -165,6 +165,9 @@ function dragElement(elmnt) {
     document
       .getElementById("panel-header")
       .addEventListener("touchmove", elementDrag);
+    document
+      .getElementById("panel-header")
+      .addEventListener("touchend", closeDragElement);
   } else {
     // otherwise, move the DIV from anywhere inside the DIV:
     elmnt.onmousedown = dragMouseDown;
@@ -172,7 +175,6 @@ function dragElement(elmnt) {
 
   function dragMouseDown(e) {
     e = e || window.event;
-    // console.log(e);
     e.preventDefault();
     // get the mouse cursor position at startup:
     pos3 = e.type === "touchstart" ? e.touches[0].clientX : e.clientX;
@@ -183,7 +185,6 @@ function dragElement(elmnt) {
   }
 
   function elementDrag(e) {
-    console.log("hi");
     e = e || window.event;
     e.preventDefault();
     // calculate the new cursor position:
@@ -197,14 +198,11 @@ function dragElement(elmnt) {
     // set the element's new position:
     elmnt.style.top = elmnt.offsetTop - pos2 + "px";
     elmnt.style.left = elmnt.offsetLeft - pos1 + "px";
-
-    console.log(e);
   }
 
   function closeDragElement() {
     // this.style.backgroundColor = "#2f3137";
     // stop moving when mouse button is released:
-    console.log("hey");
     document.onmouseup = null;
     document.onmousemove = null;
   }
