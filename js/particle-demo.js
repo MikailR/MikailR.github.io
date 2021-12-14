@@ -144,7 +144,7 @@
   }
 
   function animate() {
-    let mql = window.matchMedia("(max-width: 480px)");
+    let mql = window.matchMedia("(max-width: 600px)");
     const radii = {
       small: 4000,
       medium: mql.matches ? 10000 : 20000,
