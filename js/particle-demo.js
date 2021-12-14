@@ -32,12 +32,20 @@
 
     ctx.scale(pxlRatio, pxlRatio);
 
+    let mql = window.matchMedia("(max-width: 480px)");
+    let divisor = mql.matches ? 10 : 25;
+
+    const text = document.getElementById("text");
+    text.innerHTML = mql.matches
+      ? "Try moving your finger around!"
+      : "Try moving your mouse around!";
+
     // create points
     points = [];
-    for (var x = 0; x < width; x = x + width / 20) {
-      for (var y = 0; y < height; y = y + height / 20) {
-        var px = x + (Math.random() * width) / 20;
-        var py = y + (Math.random() * height) / 20;
+    for (var x = 0; x < width; x = x + width / divisor) {
+      for (var y = 0; y < height; y = y + height / divisor) {
+        var px = x + (Math.random() * width) / divisor;
+        var py = y + (Math.random() * height) / divisor;
         var p = { x: px, originX: px, y: py, originY: py };
         points.push(p);
       }
@@ -88,6 +96,8 @@
   function addListeners() {
     if (!("ontouchstart" in window)) {
       window.addEventListener("mousemove", mouseMove);
+    } else {
+      window.addEventListener("touchmove", mouseMove);
     }
     window.addEventListener("scroll", scrollCheck);
     window.addEventListener("resize", resize);
@@ -134,17 +144,24 @@
   }
 
   function animate() {
+    let mql = window.matchMedia("(max-width: 480px)");
+    const radii = {
+      small: 4000,
+      medium: mql.matches ? 10000 : 20000,
+      large: mql.matches ? 15000 : 40000,
+    };
+
     if (animateHeader) {
       ctx.clearRect(0, 0, width, height);
       for (var i in points) {
         // detect points in range
-        if (Math.abs(getDistance(target, points[i])) < 4000) {
+        if (Math.abs(getDistance(target, points[i])) < radii.small) {
           points[i].active = 0.3;
           points[i].circle.active = 0.6;
-        } else if (Math.abs(getDistance(target, points[i])) < 20000) {
+        } else if (Math.abs(getDistance(target, points[i])) < radii.medium) {
           points[i].active = 0.1;
           points[i].circle.active = 0.3;
-        } else if (Math.abs(getDistance(target, points[i])) < 40000) {
+        } else if (Math.abs(getDistance(target, points[i])) < radii.large) {
           points[i].active = 0.02;
           points[i].circle.active = 0.1;
         } else {
