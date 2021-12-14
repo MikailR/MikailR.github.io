@@ -32,7 +32,7 @@
 
     ctx.scale(pxlRatio, pxlRatio);
 
-    let mql = window.matchMedia("(max-width: 480px)");
+    let mql = window.matchMedia("(max-width: 600px)");
     let divisor = mql.matches ? 10 : 25;
 
     const text = document.getElementById("text");
