@@ -16,9 +16,11 @@ canvas.height = 2048;
 const wthRatio = canvas.width / canvas.height;
 canvas.style.margin = "auto";
 canvas.style.boxShadow = "0px 0px 5px rgba(0,0,0,0.2)";
-canvas.style.borderRadius = "10px";
-const width = window.innerWidth * 0.9;
-const height = window.innerHeight * 0.9;
+canvas.style.borderRadius = "10px"; // const width = window.innerWidth * 0.9;
+// const height = window.innerHeight * 0.9;
+
+const width = screen.width * 0.9;
+const height = screen.height * 0.9;
 
 if (height < width) {
   canvas.style.width = height * wthRatio + "px";

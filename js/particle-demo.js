@@ -16,6 +16,8 @@
   function initHeader() {
     width = window.innerWidth;
     height = window.innerHeight;
+    // width = screen.width;
+    // height = screen.height;
     target = { x: width / 2, y: height / 2 };
 
     largeHeader = document.getElementById("large-header");
@@ -32,7 +34,7 @@
 
     ctx.scale(pxlRatio, pxlRatio);
 
-    let mql = window.matchMedia("(max-width: 600px)");
+    let mql = window.matchMedia("(max-width: 800px)");
     let divisor = mql.matches ? 10 : 25;
 
     const text = document.getElementById("text");
@@ -94,16 +96,20 @@
 
   // Event handling
   function addListeners() {
-    if (!("ontouchstart" in window)) {
-      window.addEventListener("mousemove", mouseMove);
-    } else {
-      window.addEventListener("touchmove", mouseMove);
-    }
+    // if (!("ontouchstart" in window)) {
+    //   window.addEventListener("mousemove", mouseMove);
+    // } else {
+    //   window.addEventListener("touchmove", mouseMove);
+    // }
+    window.addEventListener("mousemove", mouseMove);
+    window.addEventListener("touchmove", mouseMove);
     window.addEventListener("scroll", scrollCheck);
     window.addEventListener("resize", resize);
   }
 
   function mouseMove(e) {
+    const isMobile = e.type === "touchmove";
+
     var posx = (posy = 0);
     if (e.pageX || e.pageY) {
       posx = e.pageX;
@@ -117,6 +123,9 @@
         e.clientY +
         document.body.scrollTop +
         document.documentElement.scrollTop;
+    } else if (e.touches && e.touches.length) {
+      posx = e.touches[0].clientX;
+      posy = e.touches[0].clientY;
     }
     target.x = posx;
     target.y = posy;
@@ -130,6 +139,8 @@
   function resize() {
     width = window.innerWidth;
     height = window.innerHeight;
+    // width = screen.width;
+    // height = screen.height;
     largeHeader.style.height = height + "px";
     canvas.width = width;
     canvas.height = height;
