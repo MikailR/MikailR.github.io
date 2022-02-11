@@ -108,8 +108,6 @@
   }
 
   function mouseMove(e) {
-    const isMobile = e.type === "touchmove";
-
     var posx = (posy = 0);
     if (e.pageX || e.pageY) {
       posx = e.pageX;
